@@ -1,0 +1,120 @@
+body{
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: hsl(0, 0%, 95%);;
+}
+
+#calculator{
+    font-family: Arial, sans-serif;
+    background-color: hsl(244, 100%, 39%);
+    border-radius: 15px;
+    max-width: 500px;
+    overflow: hidden;
+}
+
+#display{
+    width: 100%;
+    padding: 20px;
+    font-size: 5rem;
+    text-align: left;
+    border: none;
+    background-color: hsl(244, 100%, 39%);
+    color: white;
+}
+
+#keys{
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 10px;
+   padding: 25px;
+}
+
+.numberButton{
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    border: none;
+    background-color: hsl(205, 68%, 65%);
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.numberButton:hover{
+    background-color: hsl(205, 68%, 75%);
+}
+
+.numberButton:active{
+    background-color: hsl(205, 68%, 85%);
+}
+
+.operator-btn{
+    background-color: hsl(36, 100%, 50%);
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    border: none;
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.operator-btn:hover{
+    background-color: hsl(36, 100%, 65%);
+}
+.operator-btn:active{
+    background-color: hsl(36, 100%, 75%);
+}
+
+.collect-btn{
+    border: none;
+    border-radius: 50px;
+    width: 100px;
+    height: 100px;
+    background-color: hsl(205, 68%, 65%);
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    font-size: large;
+
+}
+
+.collect-btn:hover{
+    background-color: hsl(205, 68%, 75%);
+}
+.collect-btn:active{
+    background-color: hsl(205, 68%, 85%);
+}
+.delete-btn{
+    border: none;
+    border-radius: 50px;
+    width: 100px;
+    height: 100px;
+    background-color: hsl(36, 100%, 50%);
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    font-size: larger;
+}
+
+.delete-btn:hover{
+    background-color: hsl(36, 100%, 65%);
+}
+.delete-btn:active{
+    background-color: hsl(36, 100%, 75%);
+}
+#tips {
+    display: flex;
+    justify-content: flex-start;
+    color: black;
+    
+}
+.tips-btn{
+    display: flex;
+    justify-content: flex-end;
+}

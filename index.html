@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayr Tip Calculator</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+   <div id="container">
+   <div id="calculator">
+      <input id="display" readonly type="text" disabled>
+      <div id="keys">
+          <button onclick="appendToDisplay('1')" class="numberButton">1</button>
+          <button onclick="appendToDisplay('2')" class="numberButton">2</button>
+          <button onclick="appendToDisplay('3')" class="numberButton">3</button>
+          <button onclick="appendToDisplay('4')" class="numberButton">4</button>
+          <button onclick="appendToDisplay('5')" class="numberButton">5</button>
+          <button onclick="appendToDisplay('6')" class="numberButton">6</button>
+          <button onclick="appendToDisplay('7')" class="numberButton">7</button>
+          <button onclick="appendToDisplay('8')" class="numberButton">8</button>
+          <button onclick="appendToDisplay('9')" class="numberButton">9</button>
+          <button onclick="appendToDisplay('0')" class="numberButton">0</button>
+          <button onclick="appendToDisplay('.')" class="numberButton">.</button>
+          <button onclick="collectTips()" class="collect-btn">Collect Tips</button>
+          <button onclick="clearDisplay()" class="operator-btn">C</button>
+          <button onclick="backspace()" class="delete-btn">Delete</button>
+      </div>
+
+  </div>
+  <button onclick="clearTips()" class="tips-btn">Clear Tips</button>
+  <div id="total-tips"></div>
+</div>
+<script src="./index.js"></script>
+</body>
+</html>
