@@ -1,18 +1,27 @@
+
+
 body{
     margin: 0;
     display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100vh;
     background-color: hsl(0, 0%, 95%);;
 }
-
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 40px;
+    width: 100%;
+    box-sizing: border-box;
+}
 #calculator{
     font-family: Arial, sans-serif;
     background-color: hsl(244, 100%, 39%);
     border-radius: 15px;
     max-width: 500px;
     overflow: hidden;
+    display: grid;
 }
 
 #display{
@@ -108,13 +117,29 @@ body{
 .delete-btn:active{
     background-color: hsl(36, 100%, 75%);
 }
-#tips {
-    display: flex;
-    justify-content: flex-start;
-    color: black;
-    
+#tips-container {
+    font-family: Arial, sans-serif;
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    min-width: 250px;
+    max-width: 300px;
+    height: fit-content;
 }
-.tips-btn{
-    display: flex;
-    justify-content: flex-end;
+
+#tips-container ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#tips-container ul li {
+    background-color: hsl(205, 68%, 85%);
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    color: hsl(244, 100%, 20%);
+    font-weight: bold;
+    font-size: 1rem;
 }
