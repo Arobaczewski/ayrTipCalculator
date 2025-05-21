@@ -106,30 +106,36 @@ body {
   box-shadow: 0 2px 4px rgba(255, 106, 0, 0.3);
 }
 
-.collect-btn {
-  border: none;
-  border-radius: 50px;
-  width: auto;
-  grid-column: span 2;
-  height: 80px;
+#requirements-container .collect-btn {
+  width: 100%;
+  margin-top: 20px;
+  height: 60px; /* Slightly shorter than the original */
   background: linear-gradient(to bottom, #4CAF50, #45a049);
   font-weight: 600;
   color: white;
-  cursor: pointer;
   font-size: 1.2rem;
+  border-radius: 12px; /* Less rounded for a better fit in the container */
   transition: all 0.2s ease;
   box-shadow: 0 4px 8px rgba(76, 175, 80, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.collect-btn:hover {
+#requirements-container .collect-btn:hover {
   background: linear-gradient(to bottom, #5cb85c, #4cae4c);
   transform: translateY(-2px);
   box-shadow: 0 6px 12px rgba(76, 175, 80, 0.4);
 }
 
-.collect-btn:active {
+#requirements-container .collect-btn:active {
   transform: translateY(1px);
   box-shadow: 0 2px 4px rgba(76, 175, 80, 0.3);
+}
+
+/* Add a bit more spacing between the form elements and the button */
+#requirements-container form:last-of-type {
+  margin-bottom: 20px;
 }
 
 .delete-btn {
@@ -381,5 +387,11 @@ form select {
   
   #calculator {
     order: -1; /* Force calculator to appear first on mobile */
+  }
+  #requirements-container .collect-btn {
+    height: 65px;
+    font-size: 1.3rem;
+    margin-top: 25px;
+    background: linear-gradient(to bottom, #4CAF50, #2e7d32); /* Slightly darker gradient for emphasis */
   }
 }
