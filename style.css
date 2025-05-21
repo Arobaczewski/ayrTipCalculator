@@ -1,146 +1,391 @@
-
-
-body{
-    margin: 0;
-    display: flex;
-    height: 100vh;
-    background-color: hsl(0, 0%, 95%);;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+body {
+  margin: 0;
+  display: flex;
+  height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 #container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 40px;
-    padding: 40px;
-    width: 100%;
-    box-sizing: border-box;
-}
-#calculator{
-    font-family: Arial, sans-serif;
-    background-color: hsl(244, 100%, 39%);
-    border-radius: 15px;
-    max-width: 500px;
-    overflow: hidden;
-    display: grid;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 40px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-#display{
-    width: 100%;
-    padding: 20px;
-    font-size: 5rem;
-    text-align: left;
-    border: none;
-    background-color: hsl(244, 100%, 39%);
-    color: white;
+/* Calculator Styling */
+#calculator {
+  background: linear-gradient(135deg, #4b6cb7 0%, #182848 100%);
+  border-radius: 24px;
+  max-width: 500px;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
 }
 
-#keys{
-   display: grid;
-   grid-template-columns: repeat(3, 1fr);
-   gap: 10px;
-   padding: 25px;
+#display {
+  width: 100%;
+  padding: 30px 25px;
+  font-size: 3.5rem;
+  text-align: right;
+  border: none;
+  background: transparent;
+  color: white;
+  font-weight: 300;
+  margin-bottom: 10px;
 }
 
-.numberButton{
-    width: 100px;
-    height: 100px;
-    border-radius: 50px;
-    border: none;
-    background-color: hsl(205, 68%, 65%);
-    color: white;
-    font-size: 3rem;
-    font-weight: bold;
-    cursor: pointer;
+#keys {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  padding: 25px;
 }
 
-.numberButton:hover{
-    background-color: hsl(205, 68%, 75%);
+/* Button Styles */
+.numberButton {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: white;
+  font-size: 2rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.numberButton:active{
-    background-color: hsl(205, 68%, 85%);
+.numberButton:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-.operator-btn{
-    background-color: hsl(36, 100%, 50%);
-    width: 100px;
-    height: 100px;
-    border-radius: 50px;
-    border: none;
-    color: white;
-    font-size: 3rem;
-    font-weight: bold;
-    cursor: pointer;
+.numberButton:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.operator-btn:hover{
-    background-color: hsl(36, 100%, 65%);
-}
-.operator-btn:active{
-    background-color: hsl(36, 100%, 75%);
-}
-
-.collect-btn{
-    border: none;
-    border-radius: 50px;
-    width: 100px;
-    height: 100px;
-    background-color: hsl(205, 68%, 65%);
-    font-weight: bold;
-    color: white;
-    cursor: pointer;
-    font-size: large;
-
+.operator-btn {
+  background: linear-gradient(to bottom, #ff9a00, #ff6a00);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 8px rgba(255, 106, 0, 0.3);
 }
 
-.collect-btn:hover{
-    background-color: hsl(205, 68%, 75%);
-}
-.collect-btn:active{
-    background-color: hsl(205, 68%, 85%);
-}
-.delete-btn{
-    border: none;
-    border-radius: 50px;
-    width: 100px;
-    height: 100px;
-    background-color: hsl(36, 100%, 50%);
-    font-weight: bold;
-    color: white;
-    cursor: pointer;
-    font-size: larger;
+.operator-btn:hover {
+  background: linear-gradient(to bottom, #ffb340, #ff7e20);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(255, 106, 0, 0.4);
 }
 
-.delete-btn:hover{
-    background-color: hsl(36, 100%, 65%);
+.operator-btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 4px rgba(255, 106, 0, 0.3);
 }
-.delete-btn:active{
-    background-color: hsl(36, 100%, 75%);
+
+.collect-btn {
+  border: none;
+  border-radius: 50px;
+  width: auto;
+  grid-column: span 2;
+  height: 80px;
+  background: linear-gradient(to bottom, #4CAF50, #45a049);
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 8px rgba(76, 175, 80, 0.3);
 }
+
+.collect-btn:hover {
+  background: linear-gradient(to bottom, #5cb85c, #4cae4c);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(76, 175, 80, 0.4);
+}
+
+.collect-btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 4px rgba(76, 175, 80, 0.3);
+}
+
+.delete-btn {
+  border: none;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(to bottom, #e74c3c, #c0392b);
+  font-weight: 500;
+  color: white;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 8px rgba(231, 76, 60, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.delete-btn:hover {
+  background: linear-gradient(to bottom, #e57373, #d32f2f);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(231, 76, 60, 0.4);
+}
+
+.delete-btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 4px rgba(231, 76, 60, 0.3);
+}
+
+/* Requirements Styling */
+
+#requirements-container {
+  background: linear-gradient(135deg, #4b6cb7 0%, #182848 100%);
+  border-radius: 24px;
+  padding: 25px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+  width: 100%;
+  height: fit-content;
+  font-size: 1rem;
+  color: #333;
+}
+
+#requirements-container h2 {
+  margin-top: 0;
+  color: #fff;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  text-align: center;
+  font-weight: 600;
+  fill: rgba(255, 255, 255, 0.15);
+  animation: glow 3s infinite;
+}
+
+
+/* Form Controls */
+#keys > div {
+  grid-column: span 3;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 20px;
+  margin-top: 15px;
+}
+
+#backOfHouse {
+  font-size: 1.2rem;
+  color: white;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+form {
+  margin-bottom: 15px;
+}
+
+form label {
+  color: rgba(255, 255, 255, 0.9);
+  display: block;
+  margin-bottom: 5px;
+  font-size: 1rem;
+}
+
+form input[type="radio"] {
+  margin-right: 5px;
+  transform: scale(1.2);
+  accent-color: #4CAF50;
+}
+
+form input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+form select {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  margin-top: 5px;
+  font-size: 1rem;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Tips Container */
 #tips-container {
-    font-family: Arial, sans-serif;
-    background-color: hsl(0, 0%, 100%);
-    border-radius: 15px;
-    padding: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    min-width: 250px;
-    max-width: 300px;
-    height: fit-content;
+  background-color: white;
+  border-radius: 24px;
+  padding: 25px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  min-width: 300px;
+  max-width: 350px;
+  height: fit-content;
+}
+
+#tips-container h2 {
+  margin-top: 0;
+  color: #333;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  text-align: center;
+  font-weight: 600;
 }
 
 #tips-container ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  max-height: 300px;
+  overflow-y: auto;
 }
 
 #tips-container ul li {
-    background-color: hsl(205, 68%, 85%);
-    margin-bottom: 10px;
-    padding: 10px;
-    border-radius: 8px;
-    color: hsl(244, 100%, 20%);
-    font-weight: bold;
-    font-size: 1rem;
+  background-color: #f0f8ff;
+  margin-bottom: 12px;
+  padding: 15px;
+  border-radius: 12px;
+  color: #333;
+  font-weight: 500;
+  font-size: 1.1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
 }
 
+#tips-container ul li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#tips-container ul li span {
+  color: #4b6cb7;
+}
+
+#tips-container ul li span::before {
+  content: "$";
+  margin-right: 2px;
+}
+
+.tips-btns button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #e74c3c;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.tips-btns button:hover {
+  color: #c0392b;
+  transform: scale(1.1);
+}
+
+#tips-total {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #4b6cb7;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 12px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+#delete-all-btn {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(to bottom, #e74c3c, #c0392b);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 8px rgba(231, 76, 60, 0.3);
+}
+
+#delete-all-btn:hover {
+  background: linear-gradient(to bottom, #e57373, #d32f2f);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(231, 76, 60, 0.4);
+}
+
+#delete-all-btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 4px rgba(231, 76, 60, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  #container {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  #calculator, #requirements-container, #tips-container {
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  #keys {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .numberButton, .operator-btn, .delete-btn {
+    width: 100%;
+    height: 60px;
+  }
+}
+
+@media (max-width: 500px) {
+  #display {
+    font-size: 2.5rem;
+    padding: 20px;
+  }
+  
+  #keys {
+    gap: 10px;
+    padding: 15px;
+  }
+  
+  .numberButton, .operator-btn, .delete-btn {
+    height: 50px;
+    font-size: 1.5rem;
+  }
+  
+  .collect-btn {
+    height: 50px;
+    font-size: 1rem;
+  }
+}

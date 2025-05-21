@@ -26,22 +26,24 @@
           <button onclick="collectTips()" class="collect-btn">Collect Tips</button>
           <button onclick="clearDisplay()" class="operator-btn">C</button>
           <button onclick="backspace()" class="delete-btn">Delete</button>
-          <div>
-            <p id="backOfHouse">BoH?</p>
+      </div>
+  </div>
+            <div id="requirements-container">
           <form>
-            <input type="radio" id="yes" value="Yes" name="yes">
+            <label id="backOfHouse">Back Of House (BoH) Included?</label>
+            <input type="radio" id="yes" value="Yes" name="boh">
             <label for="yes">Yes</label>
             <br>
-            <input type="radio" id="no" value="No" name="no">
+            <input type="radio" id="no" value="No" name="boh">
             <label for="no">No</label>
           </form>
           <form>
             <label id="fullTimeBudtenders">Full-Time Budtenders:</label>
             <br>
-            <input type="text" id="fullTime">
+            <input type="text" id="fullTime" placeholder="Number of full time employees">
             <br>
             <label id="partTimeBudtenders">Part-Time Budtenders:</label>
-            <input type="text" id="partTime">
+            <input type="text" id="partTime" placeholder="Number of part time employees">
           </form>
           <form>
             <label id="hoursWorked">Hours Worked:</label>
@@ -55,12 +57,12 @@
             </select>
           </form>
           </div>
-      </div>
-  </div>
   <div id="tips-container">
+    <h2>Tips Collection</h2>
     <ul id="tips-list">
     </ul>
-  <div id="tips-total"></div>
+    <button onclick="deleteAll()" class="delete-all-btn">Delete All</button>
+  <div id="tips-total">Total: $0.00</div>
   </div>
   
 </div>
